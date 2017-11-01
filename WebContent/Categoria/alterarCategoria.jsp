@@ -11,21 +11,20 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 	
-	<body>
-	<form method="post" action="Hospede">
-	<c:import url="../ItensComuns/Menu.jsp" />
+
+
 	
-	<h1>Alterar categoria de produto</h1>
+	<h1>Alterar categoria do quarto</h1>
 	<fieldset> 
-	    <legend>Categoria de Produto</legend>
-	     
+	    <legend>Categoria do Quarto</legend>
+	     <form role="form" method="post" action="../Categoria">
 	    <div> 
-	        <input type="hidden" name="id" value="${Categoria.id}"></input>
+	        <input type="hidden" name="id_categoria" value="${Categoria.id}"></input>
 	        <label>Nome
-	        	<input name="nome" value="${Categoria.nome}" type="text" size="45" maxlength="45" required="" autofocus=""> 
+	        	<input name="nome_categoria" value="${Categoria.nome}" type="text" size="45" maxlength="45" required="" autofocus=""> 
 			</label>			
 			<label>Preco
-	        	<input name="preco" value="${Categoria.preco}" type="text" size="45" maxlength="45" required="" autofocus=""> 
+	        	<input name="preco_categoria" value="${Categoria.preco}" type="number" size="45" maxlength="45" required="" autofocus=""> 
 			</label>			
 			
 	    

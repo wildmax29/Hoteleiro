@@ -46,8 +46,8 @@ public class CategoriaServlet extends HttpServlet{
 	private void listarCategorias(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			List<Categoria> listarCategoria = new CategoriaService().listarTodasCategorias();
-			request.setAttribute("listaCategoria", listarCategoria);
-			request.getRequestDispatcher("/Categoria/listarCategorias.jsp").forward(request, response);
+			request.setAttribute("listarCategoria", listarCategoria);
+			request.getRequestDispatcher("/Categoria/listarCategoria.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServletException(e);
@@ -85,6 +85,7 @@ public class CategoriaServlet extends HttpServlet{
 			p = service.consultarCategoriaPorId(Integer.valueOf( request.getParameter("id_categoria"))); 
 			
 			p.setNomeCategoria(request.getParameter("nome_categoria"));
+			p.setPrecoCategoria(Float.parseFloat("preco_categoria"));
 			service.alterarCategoria(p);
 		} catch (Exception e) {
 			e.printStackTrace();

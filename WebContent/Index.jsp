@@ -8,5 +8,8 @@
 </head>
 <body>
  	BEM VINDO! AO SISTEMA HORTELEIRO!
+ 	
+ 	<button type="button" onclick="location='/hoteleiro/Quarto?acao=CadastrarQuarto'" value= "CadastrarQuarto" >Cadastrar Quarto</button>
+ 	<button type="button" onclick="location='/hoteleiro/Categoria?acao=listarCategoria'" value= "ListarCategorias" >Listar Categoria</button>
 </body>
 </html>

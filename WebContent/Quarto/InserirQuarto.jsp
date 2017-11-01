@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 
@@ -27,14 +28,10 @@
 </head>
 <body>
 
+
                 <div class="row">
                     <div class="col-lg-6">
-			<%
-						if(request.getAttribute("msg") != null){
-							out.println(request.getAttribute("msg"));
-						}
-                    
-                    %>
+			
                         <form role="form" method="post" action="../Hospede">
 
                             <div class="form-group">
@@ -48,12 +45,22 @@
 
                             <div class="form-group">
                                
-                                <select>
-  									<option name="ocupado" value="0">Ocupado</option>
+                                <select name="status_quarto">
+  									<option  value="0">Ocupado</option>
  									<option name="disponivel" value="1">Disponivel</option>
 						</select>
 						 <p class="help-block">STATUS</p>
                             </div>
+                            
+                            <p>	<a> Categoria</a><p>
+				<select name="nome_categoria">
+					<c:forEach var="cat" items="${listarCategoria}">
+						<option value="${IdCategoria}">
+							<c:out value="${NomeCategoria}" />
+						</option>
+					</c:forEach>
+				</select>
+			</p>
                              
                            <center><input type="submit" name="acao" value="inserir"></input>
                            

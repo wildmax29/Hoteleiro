@@ -40,7 +40,7 @@ public class CategoriaService  extends Conexao{
 	}
 	
 	public List<Categoria> listarTodasCategorias() throws Exception{ 
-		Query q = Conexao.getEme().createQuery("select t from Categoria t");
+		Query q = Conexao.getEme().createQuery("select t from categoria t");
         return q.getResultList();
 	}
 	

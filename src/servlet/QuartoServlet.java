@@ -9,7 +9,9 @@ package servlet;
 	import javax.servlet.http.HttpServletRequest;
 	import javax.servlet.http.HttpServletResponse;
 
+import modelo.Categoria;
 import modelo.Quarto;
+import services.CategoriaService;
 import services.QuartoService;
 
 
@@ -34,11 +36,27 @@ public class QuartoServlet extends HttpServlet {
 				alterarQuarto(request, response);
 			}else if(acao.equals("excluir")){
 				excluirQuarto(request, response);
-			}else if(acao.equals("listarCategoria")){
+			}else if(acao.equals("listarQuarto")){
 				listarQuartos(request, response);
 			}else if(acao.equals("menu")){
 				response.sendRedirect("index.jsp");
+			}else if(acao.equals("CadastrarQuarto")) {
+				try {
+					buscarTodasCategoriasParaQuarto(response,request);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
+		}
+
+		private void buscarTodasCategoriasParaQuarto(HttpServletResponse response, HttpServletRequest request) throws Exception {
+			CategoriaService categoria= new CategoriaService();
+			
+			List<Categoria> listarCategoria = categoria.listarTodasCategorias();
+			request.setAttribute("listarCategoria", listarCategoria);
+			request.getRequestDispatcher("/Quarto/InserirQuarto.jsp").forward(request, response);
+			
 		}
 
 		private void listarQuartos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
