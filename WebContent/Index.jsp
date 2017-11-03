@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Bem vindo ao Sistema Horteleiro</title>
+<title>Bem vindo ao Sistema Hoteleiro</title>
 </head>
 <body>
- 	BEM VINDO! AO SISTEMA HORTELEIRO!
+ 	BEM VINDO! AO SISTEMA HOTELEIRO!
  	
  	<button type="button" onclick="location='/hoteleiro/Quarto?acao=CadastrarQuarto'" value= "CadastrarQuarto" >Cadastrar Quarto</button>
  	<button type="button" onclick="location='/hoteleiro/Categoria?acao=listarCategoria'" value= "ListarCategorias" >Listar Categoria</button>

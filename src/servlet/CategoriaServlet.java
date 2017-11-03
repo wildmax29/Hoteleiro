@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -17,6 +18,8 @@ import services.CategoriaService;
 
 @WebServlet("/Categoria")
 public class CategoriaServlet extends HttpServlet{
+	CategoriaService cat = new CategoriaService();
+	List<Categoria> listarCategoria = new ArrayList<Categoria>();
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,9 +48,9 @@ public class CategoriaServlet extends HttpServlet{
 
 	private void listarCategorias(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			List<Categoria> listarCategoria = new CategoriaService().listarTodasCategorias();
+			listarCategoria = cat.listarTodasCategorias();
 			request.setAttribute("listarCategoria", listarCategoria);
-			request.getRequestDispatcher("/Categoria/listarCategoria.jsp").forward(request, response);
+			request.getRequestDispatcher("/Categoria/ListarCategoria.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServletException(e);

@@ -19,10 +19,10 @@
 		
 		<c:forEach var="v" items="${listarCategoria}">
 			<tr>
-				<td>${v.categoria["nomeCategoria"]}</td>
-				<td><fmt:formatNumber value="${v.categoria['precoCategoria']}" type="currency"/></td>
+				<td>${v.Categoria["nomeCategoria"]}</td>
+				<td><fmt:formatNumber value="${v.Categoria['precoCategoria']}" type="currency"/></td>
 			
-				<td><input type="button" onclick="location='/hoteleiro/Categoria?acao=Excluir&id=${v.idVenda}'" value="Excluir"/></td>
+				
 				
 			</tr>
 		</c:forEach>
