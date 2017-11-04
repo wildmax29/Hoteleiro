@@ -10,6 +10,7 @@
  	BEM VINDO! AO SISTEMA HOTELEIRO!
  	
  	<button type="button" onclick="location='/hoteleiro/Quarto?acao=CadastrarQuarto'" value= "CadastrarQuarto" >Cadastrar Quarto</button>
- 	<button type="button" onclick="location='/hoteleiro/Categoria?acao=listarCategoria'" value= "ListarCategorias" >Listar Categoria</button>
+ 	<button type="button" onclick="location='/hoteleiro/Categoria?acao=ListarCategoria'" value= "ListarCategorias" >Listar Categoria</button>
+ 	<button type="button" onclick="location='/hoteleiro/Funcionario?acao=ListarFuncionarios'" value= "listarFuncionarios" >Listar Funcionarios</button>	
 </body>
 </html>

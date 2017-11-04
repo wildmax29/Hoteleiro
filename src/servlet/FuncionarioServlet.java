@@ -40,12 +40,12 @@ public class FuncionarioServlet extends HttpServlet {
 				alterarFuncionario(request, response);
 			}else if(acao.equals("excluir")){
 				excluirFuncionario(request, response);
-			}else if(acao.equals("listarUsuarios")){
+			}else if(acao.equals("listarFuncionarios")){
 				listarFuncionarios(request, response);
-			}else if(acao.equals("pesquisarUsuarios")){
+			}else if(acao.equals("pesquisarFuncionarios")){
 				pesquisarFuncionario(request, response);
-			}else if(acao.equals("exibirPesquisarUsuarios")){
-				request.getRequestDispatcher("/usuario/pesquisarFuncionario.jsp").forward(request, response);
+			}else if(acao.equals("exibirPesquisarFuncionarios")){
+				request.getRequestDispatcher("/funcionario/pesquisarFuncionario.jsp").forward(request, response);
 			}else if(acao.equals("menu")){
 				response.sendRedirect("index.jsp");
 			}
@@ -153,8 +153,8 @@ public class FuncionarioServlet extends HttpServlet {
 		private void listarFuncionarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try {
 				List<Funcionario> listarFuncionario = new FuncionarioService().listarTodosFuncionarios();
-				request.setAttribute("listaFuncionario", listarFuncionario);
-				request.getRequestDispatcher("/funcionario/listarFuncionario.jsp").forward(request, response);
+				request.setAttribute("listaFuncionarios", listarFuncionario);
+				request.getRequestDispatcher("/Funcionario/listarFuncionarios.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 				throw new ServletException(e);
