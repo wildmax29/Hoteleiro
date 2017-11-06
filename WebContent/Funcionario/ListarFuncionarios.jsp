@@ -17,7 +17,7 @@
 			<th>LOGIN</th>
 		</tr>
 		
-		<c:forEach var="v" items="${listarFuncionario}">
+		<c:forEach var="v" items="${listarFuncionarios}">
 			<tr>
 				<td>${v.Funcionario["nomeFuncionario"]}</td>
 				<!--  <td><fmt:formatNumber value="${v.Funcionario['precoCategoria']}" type="currency"/></td>-->

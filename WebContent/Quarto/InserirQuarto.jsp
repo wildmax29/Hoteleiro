@@ -54,9 +54,9 @@
                             
                             <p>	<a> Categoria</a><p>
 				<select name="nome_categoria">
-					<c:forEach var="cat" items="${listarCategoria}">
-						<option value="${IdCategoria}">
-							<c:out value="${NomeCategoria}" />
+					<c:forEach var="c" items="${listarCategoria}">
+						<option value="${c.idCategoria}">
+							<c:out value="${c.nomeCategoria}" />
 						</option>
 					</c:forEach>
 				</select>

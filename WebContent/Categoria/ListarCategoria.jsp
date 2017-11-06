@@ -19,11 +19,9 @@
 		
 		<c:forEach var="v" items="${listarCategoria}">
 			<tr>
-				<td>${v.Categoria["nomeCategoria"]}</td>
-				<td><fmt:formatNumber value="${v.Categoria['precoCategoria']}" type="currency"/></td>
-			
-				
-				
+				<td>${v.nomeCategoria}</td>
+				<td>${v.precoCategoria}</td>
+<%-- 				<td><fmt:formatNumber value="${v.Categoria['precoCategoria']}" type="currency"/></td> --%>
 			</tr>
 		</c:forEach>
 	</table>

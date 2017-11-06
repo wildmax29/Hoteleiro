@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import java.util.*;
-
 import dao.Conexao;
 import modelo.Categoria;
 
