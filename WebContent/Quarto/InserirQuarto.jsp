@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-lg-6">
 			
-                        <form role="form" method="post" action="../Hospede">
+                        <form role="form" method="post" action="/hoteleiro/Quarto?acao=inserir">
 
                             <div class="form-group">
                                 <center><label><b>CADASTRO DE QUARTO</b></label></center>

@@ -152,8 +152,8 @@ public class FuncionarioServlet extends HttpServlet {
 		private void listarFuncionarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try {
 				List<Funcionario> listarFuncionario = new FuncionarioService().listarTodosFuncionarios();
-				request.setAttribute("listaFuncionarios", listarFuncionario);
-				request.getRequestDispatcher("/Funcionario/listarFuncionarios.jsp").forward(request, response);
+				request.setAttribute("listarFuncionarios", listarFuncionario);
+				request.getRequestDispatcher("/Funcionario/ListarFuncionarios.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 				throw new ServletException(e);

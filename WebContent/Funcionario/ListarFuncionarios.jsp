@@ -19,7 +19,7 @@
 		
 		<c:forEach var="v" items="${listarFuncionarios}">
 			<tr>
-				<td>${v.Funcionario["nomeFuncionario"]}</td>
+				<td>${v.Funcionario["nome_funcionario"]}</td>
 				<!--  <td><fmt:formatNumber value="${v.Funcionario['precoCategoria']}" type="currency"/></td>-->
 			
 				

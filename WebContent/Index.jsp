@@ -11,6 +11,7 @@
  	
  	<button type="button" onclick="location='/hoteleiro/Quarto?acao=CadastrarQuarto'" value= "CadastrarQuarto" >Cadastrar Quarto</button>
  	<button type="button" onclick="location='/hoteleiro/Categoria?acao=listarCategoria'" value= "ListarCategorias" >Listar Categoria</button>
- 	<button type="button" onclick="location='/hoteleiro/Funcionario?acao=ListarFuncionario'" value= "listarFuncionarios" >Listar Funcionarios</button>	
+ 	<button type="button" onclick="location='/hoteleiro/Funcionario?acao=listarFuncionarios'" value= "ListarFuncionarios" >Listar Funcionarios</button>
+ 	<button type="button" onclick="location='/hoteleiro/Quarto?acao=listarQuartos'" value= "listarQuartos" >Listar Quartos</button>	
 </body>
 </html>

@@ -38,7 +38,7 @@ public class QuartoService  extends Conexao{
 	}
 	
 	public List<Quarto> listarTodosQuartos() throws Exception{ 
-		Query q = Conexao.getEme().createQuery("select t from Quarto t");
+		Query q = Conexao.getEme().createQuery("select q from Quarto q");
         return q.getResultList();
 	}
 	

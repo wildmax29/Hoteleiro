@@ -29,14 +29,14 @@ public class QuartoServlet extends HttpServlet {
 			if(acao.equals("inserir")){
 				incluirQuarto(request, response);
 			}else if(acao.equals("exibirInserir")){
-				request.getRequestDispatcher("/Quarto/inserirQuarto.jsp").forward(request, response);
+				request.getRequestDispatcher("/Quarto/InserirQuarto.jsp").forward(request, response);
 			}else if(acao.equals("exibirAlterar")){
 				exibirQuarto(request, response);
 			}else if(acao.equals("alterar")){
 				alterarQuarto(request, response);
 			}else if(acao.equals("excluir")){
 				excluirQuarto(request, response);
-			}else if(acao.equals("listarQuarto")){
+			}else if(acao.equals("listarQuartos")){
 				listarQuartos(request, response);
 			}else if(acao.equals("menu")){
 				response.sendRedirect("index.jsp");
@@ -61,9 +61,11 @@ public class QuartoServlet extends HttpServlet {
 
 		private void listarQuartos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try {
-				List<Quarto> listarQuarto = new QuartoService().listarTodosQuartos();
-				request.setAttribute("listaQuarto", listarQuarto);
-				request.getRequestDispatcher("/Quarto/listarQuarto.jsp").forward(request, response);
+			
+				QuartoService quarto = new QuartoService();
+				List<Quarto> listarQuarto = quarto.listarTodosQuartos();
+				request.setAttribute("listarQuartos", listarQuarto);
+				request.getRequestDispatcher("/Quarto/ListarQuarto.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 				throw new ServletException(e);
@@ -128,20 +130,23 @@ public class QuartoServlet extends HttpServlet {
 		}
 
 		private void incluirQuarto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			try {
 			Quarto quarto= new Quarto();
+			Categoria c = new Categoria();
+			c.setIdCategoria(Integer.parseInt(request.getParameter("nome_categoria")));
 			quarto.setNumeroQuarto(Integer.parseInt(request.getParameter("numero_quarto")));
 			quarto.setStatusQuarto(Byte.parseByte(request.getParameter("status_quarto")));
-			try{
+			quarto.setCategoria(c);
 			QuartoService service = new QuartoService();
 			service.incluirQuarto(quarto);
-			}catch (Exception e) {
+			}catch(Exception e) {
 				e.printStackTrace();
 				throw new ServletException(e);
 			}
 			
 			request.setAttribute("mensagem", "quarto inserido com sucesso.");
 			
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/Index.jsp").forward(request, response);
 		}
 
 		@Override

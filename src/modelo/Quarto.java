@@ -24,7 +24,7 @@ public class Quarto implements Serializable {
 	private int numeroQuarto;
 
 	@Column(name="status_quarto")
-	private byte statusQuarto;
+	private int statusQuarto;
 
 	//bi-directional many-to-one association to Categoria
 	@ManyToOne
@@ -54,11 +54,11 @@ public class Quarto implements Serializable {
 		this.numeroQuarto = numeroQuarto;
 	}
 
-	public byte getStatusQuarto() {
+	public int getStatusQuarto() {
 		return this.statusQuarto;
 	}
 
-	public void setStatusQuarto(byte statusQuarto) {
+	public void setStatusQuarto(int statusQuarto) {
 		this.statusQuarto = statusQuarto;
 	}
 
