@@ -38,7 +38,7 @@ public class HospedeServlet extends HttpServlet{
 		}else if(acao.equals("excluir")){
 			excluirCliente(request, response);
 		}else if(acao.equals("listarHospede")){
-			listarClientes(request, response);
+			listarHospedes(request, response);
 		}else if(acao.equals("pesquisarHospede")){
 			pesquisarHospede(request, response);
 		}else if(acao.equals("exibirPesquisarHospede")){
@@ -94,7 +94,7 @@ public class HospedeServlet extends HttpServlet{
 		} catch (Exception e) {
 			if (e.getMessage().contains("foreign key constraint")) {
 				request.setAttribute("mensagem", "Não é possível exlcuir esse cliente pois está sendo usado por uma venda.");
-				listarClientes(request, response);
+				listarHospedes(request, response);
 			}
 			
 			e.printStackTrace();
@@ -102,15 +102,15 @@ public class HospedeServlet extends HttpServlet{
 		}
 		
 		request.setAttribute("mensagem", "Cliente excluido com sucesso!");
-		listarClientes(request, response);
+		listarHospedes(request, response);
 		
 	
 	}
-	private void listarClientes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void listarHospedes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			List<Hospede> lista = new HospedeService().listarTodosHospede();
-			request.setAttribute("listaCliente", lista);
-			request.getRequestDispatcher("/cliente/listarCliente.jsp").forward(request, response);
+			request.setAttribute("listaHospede", lista);
+			request.getRequestDispatcher("/Hospede/ListarHospede.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServletException(e);

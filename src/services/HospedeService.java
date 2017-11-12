@@ -32,9 +32,9 @@ public class HospedeService {
 		return h;
 	}
 
-	public List<Hospede> listarTodosHospede(){
-		Query q = Conexao.getEme().createQuery("select h from hospede h");
-		return q.getResultList();
+	public java.util.List<Hospede> listarTodosHospede(){
+		Query h = Conexao.getEme().createQuery("select h from Hospede h");
+		return h.getResultList();
 	}
 	
 	public List<Hospede> pesquisarHospedes(Hospede hospede) { 
