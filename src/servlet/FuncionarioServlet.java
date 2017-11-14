@@ -16,8 +16,6 @@ import services.Validacao;
 
 
 @WebServlet("/Funcionario")
-
-
 public class FuncionarioServlet extends HttpServlet {
 	
 			
@@ -180,7 +178,10 @@ public class FuncionarioServlet extends HttpServlet {
 			request.setAttribute("mensagem", "Funcionario excluido com sucesso!");
 			listarFuncionarios(request, response);
 		}
-	}
-
-
-
+		
+		@Override
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			doPost(request, response);
+		}
+		
+}

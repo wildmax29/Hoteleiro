@@ -27,7 +27,7 @@ public class Categoria implements Serializable {
 	private float precoCategoria;
 
 	//bi-directional many-to-one association to Quarto
-	@OneToMany(mappedBy="categoria")
+	@OneToMany(mappedBy="categoria",orphanRemoval=true)
 	private List<Quarto> quartos;
 
 	public Categoria() {

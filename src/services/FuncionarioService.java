@@ -35,7 +35,7 @@ public class FuncionarioService {
         return us;
 	}
 	public java.util.List<Funcionario> listarTodosFuncionarios(){
-		Query q = Conexao.getEme().createQuery("select t from Funcionario t");
+		Query q = Conexao.getEme().createQuery("select f from Funcionario f");
 		return q.getResultList();
 		
 		

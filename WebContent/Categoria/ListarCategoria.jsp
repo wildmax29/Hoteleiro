@@ -19,9 +19,12 @@
 		
 		<c:forEach var="v" items="${listarCategoria}">
 			<tr>
+				<td>${v.idCategoria}</td>
 				<td>${v.nomeCategoria}</td>
 				<td>${v.precoCategoria}</td>
 <%-- 				<td><fmt:formatNumber value="${v.Categoria['precoCategoria']}" type="currency"/></td> --%>
+				<td><a href="/hoteleiro/Categoria?acao=excluir&id_categoria=${v.idCategoria}">Excluir</a></td>
+
 			</tr>
 		</c:forEach>
 	</table>

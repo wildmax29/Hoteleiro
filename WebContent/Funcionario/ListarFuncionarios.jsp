@@ -19,11 +19,10 @@
 		
 		<c:forEach var="v" items="${listarFuncionarios}">
 			<tr>
-				<td>${v.Funcionario["nome_funcionario"]}</td>
-				<!--  <td><fmt:formatNumber value="${v.Funcionario['precoCategoria']}" type="currency"/></td>-->
-			
-				
-				
+				<td>${v.nome_funcionario}</td>
+				<td>${v.loginFuncionario}</td>
+				<td><inpute type="botton"onclick="location='/hoteleiro/Funcionarios?acao=excluir&id_funcionarios=${v.idFuncionario}'" value="excluir"/></td>
+
 			</tr>
 		</c:forEach>
 	</table>

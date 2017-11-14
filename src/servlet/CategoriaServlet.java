@@ -60,7 +60,7 @@ public class CategoriaServlet extends HttpServlet{
 
 	private void excluirCategoria(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Categoria p = new Categoria();
-		p.setIdCategoria(Integer.valueOf(request.getParameter("id_categoria")));
+		p.setIdCategoria(Integer.parseInt(request.getParameter("id_categoria")));
 		
 		try {
 			CategoriaService service = new CategoriaService();
