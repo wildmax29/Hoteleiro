@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listar FUncionario</title>
+<title>Listar Funcionario</title>
 </head>
 <body>
 	 <table >
@@ -21,7 +21,7 @@
 			<tr>
 				<td>${v.nome_funcionario}</td>
 				<td>${v.loginFuncionario}</td>
-				<td><inpute type="botton"onclick="location='/hoteleiro/Funcionarios?acao=excluir&id_funcionarios=${v.idFuncionario}'" value="excluir"/></td>
+				<td><input type="button" onclick="location='/hoteleiro/Funcionario?acao=excluir&id_funcionario=${v.idFuncionario}'" value="excluir"/></td>
 
 			</tr>
 		</c:forEach>

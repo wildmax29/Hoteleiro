@@ -160,7 +160,7 @@ public class FuncionarioServlet extends HttpServlet {
 		
 		private void excluirFuncionario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			Funcionario us = new Funcionario();
-			us.setIdFuncionario(Integer.valueOf(request.getParameter("id")));
+			us.setIdFuncionario(Integer.parseInt(request.getParameter("id_funcionario")));
 			
 			try {
 				FuncionarioService service = new FuncionarioService();
