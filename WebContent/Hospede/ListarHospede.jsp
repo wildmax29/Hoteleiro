@@ -24,7 +24,7 @@
 				<td>${v.nome_hospede}</td>
 				<td>${v.email_hospede}</td>
 				<td>${v.cpf_hospede}</td>
-				td><a href="/hoteleiro/Funcionario?acao=excluir&id_funcionario=${v.idFuncionario}">Excluir</a></td> 
+				<td><a href="/hoteleiro/Hospede?acao=excluir&id_hospede=${v.idHospede}">Excluir</a></td> 
 			</tr>
 		</c:forEach>
 	</table>

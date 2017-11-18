@@ -36,7 +36,7 @@ public class HospedeServlet extends HttpServlet{
 		}else if(acao.equals("alterar")){
 			alterarCliente(request, response);
 		}else if(acao.equals("excluir")){
-			excluirCliente(request, response);
+			excluirHospede(request, response);
 		}else if(acao.equals("listarHospede")){
 			listarHospedes(request, response);
 		}else if(acao.equals("pesquisarHospede")){
@@ -84,9 +84,9 @@ public class HospedeServlet extends HttpServlet{
 	}
 
 	
-	private void excluirCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void excluirHospede(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Hospede h = new Hospede();
-		h.setIdHospede(Integer.valueOf(request.getParameter("id")));
+		h.setIdHospede(Integer.valueOf(request.getParameter("id_hospede")));
 		
 		try {
 			HospedeService service = new HospedeService();

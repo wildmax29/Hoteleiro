@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-<title>CADASTRO DE FUNCIONARIO</title>
+<title>ALTERAR FUNCIONARIO</title>
 <!-- Bootstrap Core CSS -->
     <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,26 +35,30 @@
 						}
                     
                     %>
-                        <form role="form" method="post" action="../Funcionario">
+                        <form role="form" method="post" action="../hoteleiro/Funcionario?acao=alterar&id_funcionario=${funcionario.idFuncionario}">
 
                             <div class="form-group">
-                                <center><label><b>CADASTRO DE FUNCIONARIO</b></label></center>
+                                <center><label><b>ALTERAR FUNCIONARIO</b></label></center>
                                 </br>
                                </br>
-                                <input name="nome_funcionario"class="form-control" placeholder="Nome do funcionario" >
-                               
                                 <p class="help-block">NOME DO FUNCIONARIO</p>
+                                <input name="nome_funcionario"class="form-control" value="${funcionario.nome_funcionario}" >
+                               
+                               
                             </div>
 
                             <div class="form-group">
-                                <input name="login_funcionario" class="form-control" placeholder="email@email.com">
-                                <p class="help-block">LOGIN</p>
+                            	<p class="help-block">LOGIN</p>
+                                <input name="login_funcionario" class="form-control" value="${funcionario.loginFuncionario}">
+                                
                             </div>
                              <div class="form-group">
-                                <input name="senha_funcionario" class="form-control" type ="password"placeholder="SENHA">
-                                <p class="help-block">SENHA</p>
+                             <p class="help-block">SENHA</p>
+                                <input name="senha_funcionario" class="form-control" type ="password" value="${funcionario.senhaFuncionario}">
+                                
                             </div>
-                           <center><input type="submit" name="acao" value="inserir"></input>
+                            
+                           <center><input type="submit" name="acao" value="alterar"></input>
                            
                             <button type="button" onclick="location='/hoteleiro/Index.jsp'" >Cancelar</button><br>
                                                        

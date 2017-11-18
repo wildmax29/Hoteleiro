@@ -30,8 +30,8 @@
 	    
 	    <div> 
 		    <br>
-		    <input type="hidden" name="acao" value="alterar"></input>
-		    <input type="submit" value="Alterar" > 
+		    <input type="submit"acao" value="alterar"></input>
+		     
 	    </div>
 	    
 	  </fieldset>

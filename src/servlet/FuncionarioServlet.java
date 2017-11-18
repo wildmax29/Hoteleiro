@@ -106,17 +106,17 @@ public class FuncionarioServlet extends HttpServlet {
 			
 			request.setAttribute("mensagem", "Funcionario inserido com sucesso.");
 			
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/Index.jsp").forward(request, response);
 			
 		}
 		
 		private void exibirFuncionario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try {
 				FuncionarioService service = new FuncionarioService();
-				Funcionario funcionario = service.consultarFuncionarioPorId(Integer.valueOf(request.getParameter("id")));
+				Funcionario funcionario = service.consultarFuncionarioPorId(Integer.valueOf(request.getParameter("id_funcionario")));
 				
 				request.setAttribute("funcionario", funcionario);
-				request.getRequestDispatcher("/funcionario/alterarFuncionario.jsp").forward(request, response);
+				request.getRequestDispatcher("/Funcionario/AlterarFuncionario.jsp").forward(request, response);
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -144,7 +144,7 @@ public class FuncionarioServlet extends HttpServlet {
 			}
 			
 			request.setAttribute("mensagem", "Funcionario alterado com sucesso.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/Index.jsp").forward(request, response);
 		}
 		
 		private void listarFuncionarios(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

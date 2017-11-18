@@ -22,7 +22,7 @@
 				<td>${v.nome_funcionario}</td>
 				<td>${v.loginFuncionario}</td>
 				<td><input type="button" onclick="location='/hoteleiro/Funcionario?acao=excluir&id_funcionario=${v.idFuncionario}'" value="excluir"/></td>
-
+				<td><input type="button" onclick="location='/hoteleiro/Funcionario?acao=exibirAlterar&id_funcionario=${v.idFuncionario}'" value="alterar"/></td>
 			</tr>
 		</c:forEach>
 	</table>
