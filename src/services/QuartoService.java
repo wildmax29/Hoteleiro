@@ -19,6 +19,7 @@ public class QuartoService  extends Conexao{
 	
 	public void alterarQuarto(Quarto quarto) throws Exception{
 		Conexao.getEme().getTransaction().begin();
+		quarto = Conexao.getEme().find(Quarto.class, quarto.getIdQuarto());
 		Conexao.getEme().merge(quarto);
 		Conexao.getEme().getTransaction().commit();
 	}

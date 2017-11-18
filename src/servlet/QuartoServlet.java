@@ -98,11 +98,13 @@ public class QuartoServlet extends HttpServlet {
 		private void alterarQuarto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try {
 				QuartoService service = new QuartoService();
-				Quarto q = new Quarto();
-				
-				q = service.consultarQuartoPorId(Integer.valueOf( request.getParameter("id_quarto"))); 
-				
+				Quarto q = new Quarto();				
+				Categoria categoria = new Categoria();
+				q.setIdQuarto(Integer.parseInt(request.getParameter("id_quarto")));
 				q.setNumeroQuarto(Integer.parseInt(request.getParameter("numero_quarto")));
+				q.setStatusQuarto(Integer.parseInt(request.getParameter("status_quarto")));
+				categoria.setNomeCategoria(request.getParameter("nome_categoria"));
+				
 				service.alterarQuarto(q);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -119,9 +121,12 @@ public class QuartoServlet extends HttpServlet {
 			try{
 			QuartoService service = new QuartoService();
 			Quarto quarto = service.consultarQuartoPorId(Integer.valueOf(request.getParameter("id_quarto")));
+			CategoriaService categoriaservice= new CategoriaService();
+			List<Categoria> categorialista = categoriaservice.listarTodasCategorias();
 			
 			request.setAttribute("quarto", quarto);
-			request.getRequestDispatcher("/Quarto/alterarQuarto.jsp").forward(request, response);
+			request.setAttribute("listatodascategorias", categorialista);
+			request.getRequestDispatcher("/Quarto/AlterarQuarto.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 				throw new ServletException(e);

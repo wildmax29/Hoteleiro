@@ -19,7 +19,9 @@
 			<tr>
 				<td>${v.numeroQuarto}</td>
 				<td>${v.statusQuarto}</td>
-<%-- 				<td><fmt:formatNumber value="${v.Categoria['precoCategoria']}" type="currency"/></td> --%>
+    			<td><a href="/hoteleiro/Quarto?acao=excluir&id_quarto=${v.idQuarto}">Excluir</a></td>
+    			<td><a href="/hoteleiro/Quarto?acao=exibirAlterar&id_quarto=${v.idQuarto}">Alterar</a></td>
+
 			</tr>
 		</c:forEach>
 	</table>
