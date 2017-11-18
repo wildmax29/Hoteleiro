@@ -25,6 +25,6 @@
  	<button type="button" onclick="location='/hoteleiro/Quarto?acao=listarQuartos'" value= "listarQuartos" >Listar Quartos</button><br><br>
  	<button type="button" onclick="location='/hoteleiro/Hospede?acao=listarHospede'" value= "ListarHospede" >Listar Hospede</button><br><br>
 	
- 	
+ 	EU ESTOU AQUI
 </body>
 </html>
