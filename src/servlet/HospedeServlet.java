@@ -32,7 +32,7 @@ public class HospedeServlet extends HttpServlet{
 		}else if(acao.equals("exibirInserir")){
 			request.getRequestDispatcher("/Hospede/inserirHospede.jsp").forward(request, response);
 		}else if(acao.equals("exibirAlterar")){
-			exibirCliente(request, response);
+			exibirHospede(request, response);
 		}else if(acao.equals("alterar")){
 			alterarCliente(request, response);
 		}else if(acao.equals("excluir")){
@@ -121,12 +121,12 @@ public class HospedeServlet extends HttpServlet{
 			HospedeService service = new HospedeService();	
 			Hospede c = new Hospede();
 			
-			c = service.consultarHospedePorId(Integer.valueOf( request.getParameter("id"))); 
+			c = service.consultarHospedePorId(Integer.valueOf( request.getParameter("id_hospede"))); 
 			
-			c.setNome_hospede(request.getParameter("nome"));
-			c.setEmail_hospede(request.getParameter("email"));
+			c.setNome_hospede(request.getParameter("nome_hospede"));
+			c.setEmail_hospede(request.getParameter("email_hospede"));
 			
-			c.setCpf_hospede(Integer.parseInt(request.getParameter("cpf")));
+			c.setCpf_hospede(Integer.parseInt(request.getParameter("cpf_hospede")));
 			
 			service.alterarHospede(c);
 		} catch (Exception e) {
@@ -134,17 +134,17 @@ public class HospedeServlet extends HttpServlet{
 			throw new ServletException(e);
 		}
 		
-		request.setAttribute("mensagem", "Cliente alterado com sucesso.");
+		request.setAttribute("mensagem", "HOSPEDE alterado com sucesso.");
 		
-		request.getRequestDispatcher("/index.jsp").forward(request, response);		
+		request.getRequestDispatcher("/Index.jsp").forward(request, response);		
 	}
-	private void exibirCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void exibirHospede(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			HospedeService service = new HospedeService();	
-			Hospede cliente = service.consultarHospedePorId(Integer.valueOf(request.getParameter("id")));
+			Hospede hospede = service.consultarHospedePorId(Integer.valueOf(request.getParameter("id_hospede")));
 			
-			request.setAttribute("cliente", cliente);
-			request.getRequestDispatcher("/cliente/alterarCliente.jsp").forward(request, response);
+			request.setAttribute("hospede", hospede);
+			request.getRequestDispatcher("/Hospede/AlterarHospede.jsp").forward(request, response);
 
 		} catch (Exception e) {
 			e.printStackTrace();

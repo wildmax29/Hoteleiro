@@ -17,14 +17,14 @@
 	<h1>Alterar categoria do quarto</h1>
 	<fieldset> 
 	    <legend>Categoria do Quarto</legend>
-	     <form role="form" method="post" action="../Categoria">
-	    <div> 
-	        <input type="hidden" name="id_categoria" value="${Categoria.id}"></input>
+	      <form role="form" method="post" action="../hoteleiro/Categoria?acao=alterar&id_categoria=${categoria.idCategoria}">
+    <div> 
+	        <input type="hidden" name="id_categoria" value="${categoria.idCategoria}"></input>
 	        <label>Nome
-	        	<input name="nome_categoria" value="${Categoria.nome}" type="text" size="45" maxlength="45" required="" autofocus=""> 
+	        	<input name="nome_categoria" value="${categoria.nomeCategoria}" type="text" size="45" maxlength="45" required="" autofocus=""> 
 			</label>			
 			<label>Preco
-	        	<input name="preco_categoria" value="${Categoria.preco}" type="number" size="45" maxlength="45" required="" autofocus=""> 
+	        	<input name="preco_categoria" value="${categoria.precoCategoria}" type="number" size="45" maxlength="45" required="" autofocus=""> 
 			</label>			
 			
 	    

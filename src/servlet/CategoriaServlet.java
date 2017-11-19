@@ -88,7 +88,7 @@ public class CategoriaServlet extends HttpServlet{
 			p = service.consultarCategoriaPorId(Integer.valueOf( request.getParameter("id_categoria"))); 
 			
 			p.setNomeCategoria(request.getParameter("nome_categoria"));
-			p.setPrecoCategoria(Float.parseFloat("preco_categoria"));
+			p.setPrecoCategoria(Float.parseFloat(request.getParameter("preco_categoria")));
 			service.alterarCategoria(p);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -97,7 +97,7 @@ public class CategoriaServlet extends HttpServlet{
 		
 		request.setAttribute("mensagem", "Quarto alterado com sucesso.");
 		
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/Index.jsp").forward(request, response);
 		
 	}
 
@@ -106,7 +106,7 @@ public class CategoriaServlet extends HttpServlet{
 		CategoriaService service = new CategoriaService();
 		Categoria categoria = service.consultarCategoriaPorId(Integer.valueOf(request.getParameter("id_categoria")));
 		
-		request.setAttribute("quartoCategoria", categoria);
+		request.setAttribute("categoria", categoria);
 		request.getRequestDispatcher("/Categoria/alterarCategoria.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -129,7 +129,7 @@ public class CategoriaServlet extends HttpServlet{
 		
 		request.setAttribute("mensagem", "Categoria de quarto inserido com sucesso.");
 		
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/Index.jsp").forward(request, response);
 	}
 
 	@Override

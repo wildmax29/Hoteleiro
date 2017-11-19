@@ -9,22 +9,41 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Bem vindo ao Sistema Hoteleiro</title>
 </head>
-<body>
- 	BEM VINDO! AO SISTEMA HOTELEIRO!
+<<body background="../hoteleiro/Imagens/imagem1.jpg">
+
+<center>
+ 	<b>BEM VINDO! AO SISTEMA HOTELEIRO!</b>
  	<br>
  	<br>
+ 	<b>
  	<c:if test="${not empty mensagem}">
  	<c:out value="${mensagem}"></c:out></c:if>
+ 	</b>
  	<br>
  	<br>
- 	
+ 	<b>
+ 	<font color="blue">_________________________________________<br>
+ 	FUNCIONARIO<br>
+ 	____________________________________________<br><br>
  	<button type="button" onclick="location='/hoteleiro/Funcionario/InserirFuncionario.jsp'" >Cadastrar Funcionario</button><br><br>
  	<button type="button" onclick="location='/hoteleiro/Funcionario?acao=listarFuncionarios'" value= "ListarFuncionarios" >Listar Funcionarios</button><br><br>
+ 	<font color="white">____________________________________________<br>
+ 	QUARTO<br>
+ 	____________________________________________<br><br></font>
  	<button type="button" onclick="location='/hoteleiro/Quarto?acao=CadastrarQuarto'" value= "CadastrarQuarto" >Cadastrar Quarto</button><br><br>
- 	<button type="button" onclick="location='/hoteleiro/Categoria?acao=listarCategoria'" value= "ListarCategorias" >Listar Categoria</button><br><br>
  	<button type="button" onclick="location='/hoteleiro/Quarto?acao=listarQuartos'" value= "listarQuartos" >Listar Quartos</button><br><br>
+ 	____________________________________________<br>
+ 	CATEGORIA<br>
+ 	____________________________________________<br><br>
+ 	<button type="button" onclick="location='/hoteleiro/Categoria/InserirCategoria.jsp'" >Cadastrar Categoria</button><br><br>
+ 	<button type="button" onclick="location='/hoteleiro/Categoria?acao=listarCategoria'" value= "ListarCategorias" >Listar Categoria</button><br><br>
+	____________________________________________<br>
+	HOSPEDE<br>
+	____________________________________________<br><br>
+	<button type="button" onclick="location='/hoteleiro/Hospede/InserirHospede.jsp'" >Cadastrar Hospede</button><br><br>
  	<button type="button" onclick="location='/hoteleiro/Hospede?acao=listarHospede'" value= "ListarHospede" >Listar Hospede</button><br><br>
-	
- 	EU ESTOU AQUI
+	</b>
+	</font>
 </body>
+</center>
 </html>

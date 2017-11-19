@@ -25,6 +25,8 @@
 				<td>${v.email_hospede}</td>
 				<td>${v.cpf_hospede}</td>
 				<td><a href="/hoteleiro/Hospede?acao=excluir&id_hospede=${v.idHospede}">Excluir</a></td> 
+				<td><input type="button" onclick="location='/hoteleiro/Hospede?acao=exibirAlterar&id_hospede=${v.idHospede}'" value="alterar"/></td>
+				
 			</tr>
 		</c:forEach>
 	</table>

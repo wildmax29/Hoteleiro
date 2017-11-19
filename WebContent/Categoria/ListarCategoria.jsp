@@ -14,7 +14,7 @@
 	
 		<tr>
 			<th>NOME DA CATEGORIA</th>
-			<th>VALOR</th>
+			
 		</tr>
 		
 		<c:forEach var="v" items="${listarCategoria}">
@@ -24,6 +24,7 @@
 				<td>${v.precoCategoria}</td>
 <%-- 				<td><fmt:formatNumber value="${v.Categoria['precoCategoria']}" type="currency"/></td> --%>
 				<td><a href="/hoteleiro/Categoria?acao=excluir&id_categoria=${v.idCategoria}">Excluir</a></td>
+				<td><input type="button" onclick="location='/hoteleiro/Categoria?acao=exibirAlterar&id_categoria=${v.idCategoria}'" value="alterar"/></td>
 
 			</tr>
 		</c:forEach>
