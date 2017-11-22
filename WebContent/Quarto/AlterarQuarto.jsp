@@ -87,7 +87,7 @@
                              
                            <center><input type="submit" name="acao" value="alterar"></input>
                            
-                            <button type="submit" class="btn btn-secudary">Cancelar</button></center>
+                            <button type="button" onclick="location='/hoteleiro/Index.jsp'" >Cancelar</button><br></center>
 			</form>
 
 </body>

@@ -113,7 +113,7 @@ public class QuartoServlet extends HttpServlet {
 			
 			request.setAttribute("mensagem", "Quarto alterado com sucesso.");
 			
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/Index.jsp").forward(request, response);
 			
 		}
 

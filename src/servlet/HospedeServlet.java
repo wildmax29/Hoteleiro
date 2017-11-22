@@ -168,8 +168,8 @@ public class HospedeServlet extends HttpServlet{
 			throw new ServletException(e);
 		}
 		
-		request.setAttribute("msg", "Hospede inserido com sucesso.");
-		request.getRequestDispatcher("/Hospede/InserirHospede.jsp").forward(request, response);
+		request.setAttribute("mensagem", "Hospede inserido com sucesso.");
+		request.getRequestDispatcher("/Index.jsp").forward(request, response);
 		
 	}
 	private void popularListBoxes(HttpServletRequest request) throws ServletException {

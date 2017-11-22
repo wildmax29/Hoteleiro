@@ -1,7 +1,12 @@
 package services;
 
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import org.eclipse.persistence.internal.jpa.metadata.sequencing.GeneratedValueMetadata;
+
 import com.sun.xml.bind.v2.schemagen.xmlschema.List;
+
 import java.util.*;
 import dao.Conexao;
 import modelo.Funcionario;
@@ -59,5 +64,18 @@ public class FuncionarioService {
 		return q.getResultList();
     }
 	
+	public boolean login(String user, String senha){
+		
+		String sql = "select * from funcionario where login_funcionario = '"+ user + "' AND " + "senha_funcionario = '"+ senha+"'";
+		Query q = Conexao.getEme().createNativeQuery(sql);
+		java.util.List<Funcionario> list = q.getResultList();
+		int count = list.size();
+		
+		if(count==1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }
 

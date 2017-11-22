@@ -29,4 +29,7 @@
 				
 			</tr>
 		</c:forEach>
+	
 	</table>
+		<button type="button" onclick="location='/hoteleiro/Index.jsp'" >Cancelar</button><br>
+		</body>

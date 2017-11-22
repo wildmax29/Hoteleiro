@@ -31,6 +31,7 @@
 	    <div> 
 		    <br>
 		    <input type="submit"acao" value="alterar"></input>
+		    <button type="button" onclick="location='/hoteleiro/Index.jsp'" >Cancelar</button><br>
 		     
 	    </div>
 	    
