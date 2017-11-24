@@ -44,6 +44,7 @@
  	<button type="button" onclick="location='/hoteleiro/Hospede?acao=listarHospede'" value= "ListarHospede" >Listar Hospede</button><br><br>
 	</b>
 	</font>
+	<button type="button" onclick="location='/hoteleiro/Reserva?acao=CadastrarReserva'" value= "CadastrarReserva" >Cadastrar Reserva</button><br><br>
 </body>
 </center>
 </html>

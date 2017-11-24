@@ -1,6 +1,8 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -28,6 +30,9 @@ public class Reserva implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="notafiscal_fk")
 	private Notafiscal notafiscal;
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy="reserva")
+	private Notafiscal notaFiscal;
 
 	//bi-directional many-to-one association to Quarto
 	@ManyToOne

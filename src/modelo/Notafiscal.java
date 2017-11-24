@@ -23,8 +23,8 @@ public class Notafiscal implements Serializable {
 	private String operacao_notafiscal;
 
 	//bi-directional many-to-one association to Reserva
-	@OneToMany(mappedBy="notafiscal")
-	private List<Reserva> reservas;
+	@OneToOne
+	private Reserva reserva;
 
 	public Notafiscal() {
 	}
@@ -45,26 +45,12 @@ public class Notafiscal implements Serializable {
 		this.operacao_notafiscal = operacao_notafiscal;
 	}
 
-	public List<Reserva> getReservas() {
-		return this.reservas;
-	}
-
-	public void setReservas(List<Reserva> reservas) {
-		this.reservas = reservas;
-	}
-
-	public Reserva addReserva(Reserva reserva) {
-		getReservas().add(reserva);
-		reserva.setNotafiscal(this);
-
+	public Reserva getReserva() {
 		return reserva;
 	}
 
-	public Reserva removeReserva(Reserva reserva) {
-		getReservas().remove(reserva);
-		reserva.setNotafiscal(null);
-
-		return reserva;
+	public void setReserva(Reserva reserva) {
+		this.reserva = reserva;
 	}
 
 }
