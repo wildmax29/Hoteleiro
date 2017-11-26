@@ -16,6 +16,20 @@ import services.FuncionarioService;
 
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet{
+	
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		if (req.getSession(false) !=null) {
+			req.getSession().invalidate();
+		}
+		resp.sendRedirect("/hoteleiro/Login.jsp");		
+		
+
+	
+
+	}
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String acao = request.getParameter("acao");
@@ -28,6 +42,7 @@ public class LoginServlet extends HttpServlet{
 			boolean retorno = service.login(user, senha);
 			
 			if(!retorno) {
+				request.getSession().invalidate();
 				request.setAttribute("mensagem", "Login inválido.");
 				request.getRequestDispatcher("/Login.jsp").forward(request, response);
 			}else {
