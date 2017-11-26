@@ -45,6 +45,7 @@ public class LoginServlet extends HttpServlet{
 				request.getSession().invalidate();
 				request.setAttribute("mensagem", "Login inválido.");
 				request.getRequestDispatcher("/Login.jsp").forward(request, response);
+				System.out.println("Senha errada, idiota!");
 			}else {
 				request.getSession().setAttribute("situacao", "Usuario logado");
 				//request.getSession().setAttribute("usuarioIdLogado", f.getIdFuncionario());
@@ -75,6 +76,8 @@ public class LoginServlet extends HttpServlet{
 		 	
 		 	
 		}else{
+			request.getSession().invalidate();
+			System.out.println("saindo.............");
 			response.sendRedirect("/hoteleiro/Login.jsp");
 		}
 	}

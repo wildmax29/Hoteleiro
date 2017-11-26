@@ -23,8 +23,14 @@ public class Notafiscal implements Serializable {
 	private String operacao_notafiscal;
 
 	//bi-directional many-to-one association to Reserva
-	@OneToOne
+	//@OneToOne
+	//private Reserva reserva;
+	@ManyToOne
+	@JoinColumn(name="reserva_fk")
 	private Reserva reserva;
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy="notaFiscal")
+	private Reserva Reserva;
 
 	public Notafiscal() {
 	}

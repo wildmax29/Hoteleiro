@@ -100,8 +100,8 @@ public class QuartoServlet extends HttpServlet {
 				QuartoService service = new QuartoService();
 				Quarto q = new Quarto();				
 				Categoria categoria = new Categoria();
-				q.setIdQuarto(Integer.parseInt(request.getParameter("id_quarto")));
-				q.setNumeroQuarto(Integer.parseInt(request.getParameter("numero_quarto")));
+				q = service.consultarQuartoPorId(Integer.parseInt(request.getParameter("id_quarto")));
+							
 				q.setStatusQuarto(Integer.parseInt(request.getParameter("status_quarto")));
 				categoria.setNomeCategoria(request.getParameter("nome_categoria"));
 				

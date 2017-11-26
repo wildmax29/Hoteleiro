@@ -39,8 +39,9 @@ public class LoginFilter implements Filter {
 
 		} else {
 
+			System.out.println("Sai satanas...");
 			((HttpServletResponse) response).sendRedirect("/hoteleiro/Login.jsp");
-
+			
 		}
 
 	}

@@ -38,8 +38,10 @@
                                 <center><label><b>ALTERAR QUARTO</b></label></center>
                                 </br>
                                </br>
-                                <input name="numero_quarto"class="form-control"  value="${quarto.numeroQuarto}">
                                 <input name="id_quarto" hidden class="form-control" value="${quarto.idQuarto}">
+                               
+                                <input name="numero_quarto"class="form-control"  value="${quarto.numeroQuarto}" disabled>
+                                
                                
                                 
                             </div>
@@ -67,7 +69,7 @@
                             </div>
                             
                             <p>	<a>Categoria</a><p>
-				<select name="nome_categoria">
+				<select name="nome_categoria" disabled>
 					<c:forEach var="c" items="${listatodascategorias}">
 					<c:choose>
 					   <c:when test = "${quarto.categoria.idCategoria==c.idCategoria}">

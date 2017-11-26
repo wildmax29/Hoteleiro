@@ -122,6 +122,7 @@ public class HospedeServlet extends HttpServlet{
 			Hospede c = new Hospede();
 			
 			c = service.consultarHospedePorId(Integer.valueOf( request.getParameter("id_hospede"))); 
+			System.out.println(c);
 			
 			c.setNome_hospede(request.getParameter("nome_hospede"));
 			c.setEmail_hospede(request.getParameter("email_hospede"));

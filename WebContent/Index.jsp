@@ -45,6 +45,7 @@
 	</b>
 	</font>
 	<button type="button" onclick="location='/hoteleiro/Reserva?acao=CadastrarReserva'" value= "CadastrarReserva" >Cadastrar Reserva</button><br><br>
+	<button type="button" onclick="location='/hoteleiro/Login?acao=Sair'" value= "Sair" >Sair do Sistema</button><br><br>
 </body>
 </center>
 </html>

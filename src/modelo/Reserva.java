@@ -27,11 +27,13 @@ public class Reserva implements Serializable {
 	private Hospede hospede;
 
 	//bi-directional many-to-one association to Notafiscal
-	@ManyToOne
-	@JoinColumn(name="notafiscal_fk")
-	private Notafiscal notafiscal;
+	//@ManyToOne
+	//@JoinColumn(name="notafiscal_fk")
+	//private Notafiscal notafiscal;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy="reserva")
+	//@OneToOne(fetch = FetchType.LAZY, mappedBy="reserva")
+	//private Notafiscal notaFiscal;
+	@OneToOne
 	private Notafiscal notaFiscal;
 
 	//bi-directional many-to-one association to Quarto
@@ -58,13 +60,7 @@ public class Reserva implements Serializable {
 		this.hospede = hospede;
 	}
 
-	public Notafiscal getNotafiscal() {
-		return this.notafiscal;
-	}
-
-	public void setNotafiscal(Notafiscal notafiscal) {
-		this.notafiscal = notafiscal;
-	}
+	
 
 	public Quarto getQuarto() {
 		return this.quarto;
